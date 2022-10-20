@@ -1,4 +1,5 @@
 // query selector variables go here 👇
+var randomImg = document.querySelector('.poster-img');
 
 // we've provided you with some data to work with 👇
 var images = [
@@ -103,7 +104,28 @@ var currentPoster;
 
 // event listeners go here 👇
 
+// Adds Img to (.poster-img class)
+// randomImg.src = "./assets/bees.jpg";
+
+// This does not change anything (Undefined)
+// for(var i = 0; i < images.length; i++) {
+//   var image = images[i];
+//   console.log(images[image])
+//   images[image];
+//   // console.log(images[i])
+// }
+
+
+var random1 = images[Math.floor(Math.random() * images.length)];
+console.log(random1)
+
+
+randomImg.src = random1;
+
+
 // functions and event handlers go here 👇
+
+
 // (we've provided one for you to get you started)!
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
