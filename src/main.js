@@ -23,13 +23,6 @@ var imageURLInput = document.getElementById('poster-image-url');
 var posterTitleInput = document.getElementById("poster-title");
 var posterQuoteInput = document.getElementById("poster-quote");
 
-
-
-
-
-
-
-
 // we've provided you with some data to work with 👇
 var images = [
   "./assets/bees.jpg",
@@ -193,31 +186,33 @@ function toMain2() {
 //   console.log(randomTitles);
 // }
 
-function goHome() {
-  mainPoster.classList.remove('hidden');
-  makeOwnForm.classList.add('hidden');
-  savedPosterSection.classList.add('hidden');
-  randomPosterBtn.classList.remove('hidden');
-  toggleOffPosterBtn.classList.remove('hidden');
-  showSavedPosterBtn.classList.add('hidden');
-  createMyPosterBtn.classList.remove('hidden');
-  backToMainBtn.classList.remove('hidden');
-  takeMeBackBtn.classList.add('hidden');
-}
+// function goHome() {
+//   mainPoster.classList.remove('hidden');
+//   randomPosterBtn.classList.remove('hidden');
+//   toggleOffPosterBtn.classList.remove('hidden');
+//   createMyPosterBtn.classList.remove('hidden');
+//   backToMainBtn.classList.remove('hidden');
+//   takeMeBackBtn.classList.add('hidden');
+//   showSavedPosterBtn.classList.add('hidden');
+//   makeOwnForm.classList.add('hidden');
+//   savedPosterSection.classList.add('hidden');
+// }
 
 function createPoster(event) {
   event.preventDefault();
+  mainPoster.classList.remove('hidden');
+  makeOwnForm.classList.add('hidden');
   currentPoster = new Poster(imageURLInput.value, posterTitleInput.value, posterQuoteInput.value);
 
-  imageURL.push(imageURLInput.value);
+  images.push(imageURLInput.value);
   titles.push(posterTitleInput.value);
   quotes.push(posterQuoteInput.value);
 
-  randomImages.src = currentPoster.imageURL;
   randomTitles.innerText = currentPoster.title;
   randomQuotes.innerText = currentPoster.quote;
+  randomImages.src = currentPoster.imageURL;
 
-  goHome();
+  // goHome();
 }
 
 
