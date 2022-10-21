@@ -3,6 +3,9 @@ var randomImages = document.querySelector(".poster-img")
 var randomTitles = document.querySelector(".poster-title")
 var randomQuotes = document.querySelector(".poster-quote")
 var randomPosterBtn = document.querySelector('.show-random')
+var toggleOffPoster = document.querySelector(".show-form") 
+var mainPoster = document.querySelector(".main-poster")
+var makeOwnForm = document.querySelector(".poster-form")
 
 // we've provided you with some data to work with 👇
 var images = [
@@ -127,12 +130,19 @@ randomQuotes.innerText = random3
 // event listeners go here 👇
 
 randomPosterBtn.addEventListener('click', changePoster);
+toggleOffPoster.addEventListener('click', removePoster);
+
 
 function changePoster() {
   var random1 = images[Math.floor(Math.random() * images.length)];
   randomImages.src = random1;
   return random1
 }
+function removePoster() {
+  mainPoster.classList.add('hidden');
+  makeOwnForm.classList.remove('hidden')
+}
+
 
 // functions and event handlers go here 👇
 // (we've provided one for you to get you started)!
