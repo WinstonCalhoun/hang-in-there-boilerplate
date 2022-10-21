@@ -8,6 +8,8 @@ var mainPoster = document.querySelector(".main-poster")
 var makeOwnForm = document.querySelector(".poster-form")
 var showSavedPosterBtn = document.querySelector(".show-saved");
 var savedPosterSection = document.querySelector(".saved-posters");
+var takeMeBack = document.querySelector(".show-main")
+var backToMain = document.querySelector(".back-to-main")
 
 // we've provided you with some data to work with 👇
 var images = [
@@ -134,10 +136,11 @@ randomQuotes.innerText = random3
 randomPosterBtn.addEventListener('click', changePoster);
 toggleOffPoster.addEventListener('click', removePoster);
 showSavedPosterBtn.addEventListener('click', showSavedPoster)
+takeMeBack.addEventListener('click', toMain1)
+backToMain.addEventListener('click', toMain2)
 
 
-
-
+// functions and event handlers go here 👇
 function changePoster() {
   var random1 = images[Math.floor(Math.random() * images.length)];
   randomImages.src = random1;
@@ -154,10 +157,17 @@ function showSavedPoster() {
   savedPosterSection.classList.remove('hidden');
 }
 
+function toMain1() {
+  mainPoster.classList.remove('hidden');
+}
+
+function toMain2() {
+  mainPoster.classList.remove('hidden');
+}
 
 
 
-// functions and event handlers go here 👇
+
 // (we've provided one for you to get you started)!
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
