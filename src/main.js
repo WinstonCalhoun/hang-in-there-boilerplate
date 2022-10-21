@@ -1,4 +1,5 @@
 // query selector variables go here 👇
+// Declaring variables
 
 // Img/Title/Quote showcase
 var randomImages = document.querySelector(".poster-img")
