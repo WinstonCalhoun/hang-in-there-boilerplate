@@ -1,16 +1,24 @@
 // query selector variables go here 👇
+
+// Img/Title/Quote showcase
 var randomImages = document.querySelector(".poster-img")
 var randomTitles = document.querySelector(".poster-title")
 var randomQuotes = document.querySelector(".poster-quote")
-var randomPosterBtn = document.querySelector('.show-random')
-var toggleOffPoster = document.querySelector(".show-form") 
+
+// Our Sections
 var mainPoster = document.querySelector(".main-poster")
 var makeOwnForm = document.querySelector(".poster-form")
-var showSavedPosterBtn = document.querySelector(".show-saved");
 var savedPosterSection = document.querySelector(".saved-posters");
-var takeMeBack = document.querySelector(".show-main")
-var backToMain = document.querySelector(".back-to-main")
-var showMyPosterBtn = document.querySelector('.make-poster')
+
+// Our Buttons
+var randomPosterBtn = document.querySelector('.show-random');
+var toggleOffPosterBtn = document.querySelector(".show-form");
+var showSavedPosterBtn = document.querySelector(".show-saved");
+var createMyPosterBtn = document.querySelector('.make-poster');
+var takeMeBackBtn = document.querySelector(".show-main");
+var backToMainBtn = document.querySelector(".back-to-main");
+
+// Our Form Inputs
 var imageURLInput = document.getElementById('poster-image-url');
 var posterTitleInput = document.getElementById("poster-title");
 var posterQuoteInput = document.getElementById("poster-quote");
@@ -145,10 +153,11 @@ randomQuotes.innerText = random3
 // event listeners go here 👇
 // Our Buttons
 randomPosterBtn.addEventListener('click', changePoster);
-toggleOffPoster.addEventListener('click', removePoster);
+toggleOffPosterBtn.addEventListener('click', removePoster);
 showSavedPosterBtn.addEventListener('click', showSavedPoster)
-takeMeBack.addEventListener('click', toMain1)
-backToMain.addEventListener('click', toMain2)
+takeMeBackBtn.addEventListener('click', toMain1)
+backToMainBtn.addEventListener('click', toMain2)
+createMyPosterBtn.addEventListener('click', createPoster)
 
 
 // functions and event handlers go here 👇
@@ -174,6 +183,31 @@ function toMain1() {
 
 function toMain2() {
   mainPoster.classList.remove('hidden');
+}
+
+// function createPoster(event) {
+//   event.preventDefault();
+//   randomImages.src = imageURLInput.value;
+//   randomTitles.innerText = "Hello";
+//   randomQuotes.innerText = posterQuoteInput.value;
+//   console.log(randomTitles);
+// }
+
+
+
+function createPoster(event) {
+  event.preventDefault();
+  currentPoster = new Poster(imageURLInput.value, posterTitleInput.value, posterQuoteInput.value);
+
+  imageURL.push(imageURLInput.value);
+  titles.push(posterTitleInput.value);
+  quotes.push(posterQuoteInput.value);
+
+  randomImages.src = currentPoster.imageURL;
+  randomTitles.innerText = currentPoster.title;
+  randomQuotes.innerText = currentPoster.quote;
+
+  goHome();
 }
 
 
