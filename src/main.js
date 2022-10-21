@@ -169,7 +169,7 @@ function changePoster() {
 
 function removePoster() {
   mainPoster.classList.add('hidden');
-  makeOwnForm.classList.remove('hidden')
+  makeOwnForm.classList.remove('hidden');
 }
 
 function showSavedPoster() {
@@ -193,7 +193,17 @@ function toMain2() {
 //   console.log(randomTitles);
 // }
 
-
+function goHome() {
+  mainPoster.classList.remove('hidden');
+  makeOwnForm.classList.add('hidden');
+  savedPosterSection.classList.add('hidden');
+  randomPosterBtn.classList.remove('hidden');
+  toggleOffPosterBtn.classList.remove('hidden');
+  showSavedPosterBtn.classList.add('hidden');
+  createMyPosterBtn.classList.remove('hidden');
+  backToMainBtn.classList.remove('hidden');
+  takeMeBackBtn.classList.add('hidden');
+}
 
 function createPoster(event) {
   event.preventDefault();
