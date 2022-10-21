@@ -218,13 +218,15 @@ function createPoster(event) {
   // goHome();
 }
 
-function savePoster() {
-  console.log(savedPosters.push('hello'))
+//
+
+//  console.log(savedPosters.push('hello'))
+//  console.log(savedPosters)
 }
 
 
 
 // (we've provided one for you to get you started)!
-function getRandomIndex(array) {
-  return Math.floor(Math.random() * array.length);
-}
+//function getRandomIndex(array) {
+//  return Math.floor(Math.random() * array.length);
+//}
