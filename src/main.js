@@ -10,6 +10,17 @@ var showSavedPosterBtn = document.querySelector(".show-saved");
 var savedPosterSection = document.querySelector(".saved-posters");
 var takeMeBack = document.querySelector(".show-main")
 var backToMain = document.querySelector(".back-to-main")
+var showMyPosterBtn = document.querySelector('.make-poster')
+var imageURLInput = document.getElementById('poster-image-url');
+var posterTitleInput = document.getElementById("poster-title");
+var posterQuoteInput = document.getElementById("poster-quote");
+
+
+
+
+
+
+
 
 // we've provided you with some data to work with 👇
 var images = [
