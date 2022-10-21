@@ -18,7 +18,7 @@ var showSavedPosterBtn = document.querySelector(".show-saved");
 var createMyPosterBtn = document.querySelector('.make-poster');
 var takeMeBackBtn = document.querySelector(".show-main");
 var backToMainBtn = document.querySelector(".back-to-main");
-var savePosterBtn = document.querySelector(".save-poster")
+var savePosterBtn = document.querySelector('.save-poster');
 
 // Our Form Inputs
 var imageURLInput = document.getElementById('poster-image-url');
@@ -128,18 +128,18 @@ var currentPoster;
 
 // Generates a random title
 var random1 = images[Math.floor(Math.random() * images.length)];
-console.log(random1)
+// console.log(random1)
 
 randomImages.src = random1
 
 ////////////////////////
 var random2 = titles[Math.floor(Math.random() * titles.length)];
-console.log(random2)
+// console.log(random2)
 
 randomTitles.innerText = random2
 ////////////////////////
 var random3 = quotes[Math.floor(Math.random() * quotes.length)];
-console.log(random3)
+// console.log(random3)
 
 randomQuotes.innerText = random3
 
@@ -214,15 +214,23 @@ function createPoster(event) {
   randomTitles.innerText = currentPoster.title;
   randomQuotes.innerText = currentPoster.quote;
   randomImages.src = currentPoster.imageURL;
-
   // goHome();
 }
 
-//
+// This saves the poster
+function savePoster() {
+  console.log('Poster Saved')
+  // savedPosters.push('This is poster 1');
 
-//  console.log(savedPosters.push('hello'))
-//  console.log(savedPosters)
+  // 1. We are storing the current data showed in the home page to the array named (storedPosters)
+  // savedPosters.push(randomImages.src, randomTitles.innerText, randomQuotes.innerText)
+  if(!savedPosters.includes(randomImages.src, randomTitles.innerText, randomQuotes.innerText)) {
+    savedPosters.push(randomImages.src, randomTitles.innerText, randomQuotes.innerText)
+    // return savedPosters;
+  }
+  console.log(savedPosters);
 }
+
 
 
 
