@@ -6,6 +6,8 @@ var randomPosterBtn = document.querySelector('.show-random')
 var toggleOffPoster = document.querySelector(".show-form") 
 var mainPoster = document.querySelector(".main-poster")
 var makeOwnForm = document.querySelector(".poster-form")
+var showSavedPosterBtn = document.querySelector(".show-saved");
+var savedPosterSection = document.querySelector(".saved-posters");
 
 // we've provided you with some data to work with 👇
 var images = [
@@ -128,9 +130,12 @@ randomQuotes.innerText = random3
 
 
 // event listeners go here 👇
-
+// Our Buttons
 randomPosterBtn.addEventListener('click', changePoster);
 toggleOffPoster.addEventListener('click', removePoster);
+showSavedPosterBtn.addEventListener('click', showSavedPoster)
+
+
 
 
 function changePoster() {
@@ -138,10 +143,18 @@ function changePoster() {
   randomImages.src = random1;
   return random1
 }
+
 function removePoster() {
   mainPoster.classList.add('hidden');
   makeOwnForm.classList.remove('hidden')
 }
+
+function showSavedPoster() {
+  mainPoster.classList.add('hidden');
+  savedPosterSection.classList.remove('hidden');
+}
+
+
 
 
 // functions and event handlers go here 👇
