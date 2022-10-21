@@ -18,6 +18,7 @@ var showSavedPosterBtn = document.querySelector(".show-saved");
 var createMyPosterBtn = document.querySelector('.make-poster');
 var takeMeBackBtn = document.querySelector(".show-main");
 var backToMainBtn = document.querySelector(".back-to-main");
+var savePosterBtn = document.querySelector(".save-poster")
 
 // Our Form Inputs
 var imageURLInput = document.getElementById('poster-image-url');
@@ -152,6 +153,7 @@ showSavedPosterBtn.addEventListener('click', showSavedPoster)
 takeMeBackBtn.addEventListener('click', toMain1)
 backToMainBtn.addEventListener('click', toMain2)
 createMyPosterBtn.addEventListener('click', createPoster)
+savePosterBtn.addEventListener('click', savePoster)
 
 
 // functions and event handlers go here 👇
@@ -216,6 +218,9 @@ function createPoster(event) {
   // goHome();
 }
 
+function savePoster() {
+  console.log(savedPosters.push('hello'))
+}
 
 
 
