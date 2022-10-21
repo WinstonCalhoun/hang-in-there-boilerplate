@@ -223,7 +223,11 @@ function savePoster() {
   // savedPosters.push('This is poster 1');
 
   // 1. We are storing the current data showed in the home page to the array named (storedPosters)
-  savedPosters.push(randomImages.src, randomTitles.innerText, randomQuotes.innerText)
+  // savedPosters.push(randomImages.src, randomTitles.innerText, randomQuotes.innerText)
+  if(!savedPosters.includes(randomImages.src, randomTitles.innerText, randomQuotes.innerText)) {
+    savedPosters.push(randomImages.src, randomTitles.innerText, randomQuotes.innerText)
+    // return savedPosters;
+  }
   console.log(savedPosters);
 }
 
