@@ -125,7 +125,7 @@ var quotes = [
   "A champion is defined not by their wins but by how they can recover when they fall."
 ];
 var savedPosters = [];
-var currentPoster;
+var currentPoster = new Poster(randomImages, randomTitles, randomQuotes);
 
 // Generates a random title
 var random1 = images[Math.floor(Math.random() * images.length)];
@@ -171,13 +171,17 @@ function removePoster() {
 }
 
 function showSavedPoster() {
+//  savedPosterGrid.innerHTML = "";
   mainPoster.classList.add('hidden');
   savedPosterSection.classList.remove('hidden');
-  randomTitles.innerText = "Hello"
-  savedPosterGrid.innerHTML = `<img class="poster-img" src="${randomImages.src}" alt="nothin' to see here">
-        <h1 class="poster-title">${randomTitles.innerText}</h1>
-        <h3 class="poster-quote">${randomQuotes.innerText}</h3>`
-  console.log("show poster")
+for (var i = 0; i < savedPosters.length; i ++){
+  savedPosterGrid.innerHTML += `
+  <article class="poster">
+    <img class="poster-img" src="${savedPosters[i].imageURL}" alt="nothin' to see here">
+    <h1 class="poster-title">${savedPosters[i].title}</h1>
+    <h3 class="poster-quote">${savedPosters[i].quote}</h3>
+  </article>`
+  }
 }
 
 function toMain1() {
