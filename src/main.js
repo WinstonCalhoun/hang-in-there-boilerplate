@@ -19,6 +19,7 @@ var createMyPosterBtn = document.querySelector('.make-poster');
 var takeMeBackBtn = document.querySelector(".show-main");
 var backToMainBtn = document.querySelector(".back-to-main");
 var savePosterBtn = document.querySelector('.save-poster');
+var savedPosterGrid = document.querySelector('.saved-posters-grid');
 
 // Our Form Inputs
 var imageURLInput = document.getElementById('poster-image-url');
@@ -159,8 +160,12 @@ savePosterBtn.addEventListener('click', savePoster)
 // functions and event handlers go here 👇
 function changePoster() {
   var random1 = images[Math.floor(Math.random() * images.length)];
-  randomImages.src = random1;
-  return random1
+    randomImages.src = random1;
+  var random2 = titles[Math.floor(Math.random() * titles.length)];
+    randomTitles.innerText = random2
+  var random3 = quotes[Math.floor(Math.random() * quotes.length)];
+    randomQuotes.innerText = random3
+    return random1, random2, random3
 }
 
 function removePoster() {
@@ -171,6 +176,11 @@ function removePoster() {
 function showSavedPoster() {
   mainPoster.classList.add('hidden');
   savedPosterSection.classList.remove('hidden');
+  randomTitles.innerText = "Hello"
+  savedPosterGrid.innerHTML = `<img class="poster-img" src="${randomImages.src}" alt="nothin' to see here">
+        <h1 class="poster-title">${randomTitles.innerText}</h1>
+        <h3 class="poster-quote">${randomQuotes.innerText}</h3>`
+  console.log("show poster")
 }
 
 function toMain1() {
@@ -230,6 +240,7 @@ function savePoster() {
   }
   console.log(savedPosters);
 }
+
 
 
 
