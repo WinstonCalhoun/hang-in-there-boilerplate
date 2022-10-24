@@ -157,11 +157,14 @@ savePosterBtn.addEventListener('click', savePoster);
 // functions and event handlers go here 👇
 function changePoster() {
   var random1 = images[Math.floor(Math.random() * images.length)];
+  console.log(random1)
     randomImages.src = random1;
   var random2 = titles[Math.floor(Math.random() * titles.length)];
     randomTitles.innerText = random2;
   var random3 = quotes[Math.floor(Math.random() * quotes.length)];
     randomQuotes.innerText = random3;
+  var posterInstance = new Poster(random1, random2, random3);
+    currentPoster = posterInstance
     return random1, random2, random3;
 }
 
@@ -171,15 +174,17 @@ function removePoster() {
 }
 
 function showSavedPoster() {
-//  savedPosterGrid.innerHTML = "";
+  savedPosterGrid.innerHTML = "";
   mainPoster.classList.add('hidden');
   savedPosterSection.classList.remove('hidden');
-for (var i = 0; i < savedPosters.length; i ++){
+  for (var i = 0; i < savedPosters.length; i++){
+    console.log(savedPosterGrid.innerHTML)
+    console.log(savedPosters[i])
   savedPosterGrid.innerHTML += `
-  <article class="poster">
-    <img class="poster-img" src="${savedPosters[i].imageURL}" alt="nothin' to see here">
-    <h1 class="poster-title">${savedPosters[i].title}</h1>
-    <h3 class="poster-quote">${savedPosters[i].quote}</h3>
+  <article class="mini-poster">
+    <img class="poster-img" src="${savedPosters[i].imageURL}"alt="nothin' to see here">
+    <h2> ${savedPosters[i].title}</h2>
+    <h4> ${savedPosters[i].quote}</h4>
   </article>`
   }
 }
@@ -235,8 +240,9 @@ function savePoster() {
 
   // 1. We are storing the current data showed in the home page to the array named (storedPosters)
   // savedPosters.push(randomImages.src, randomTitles.innerText, randomQuotes.innerText)
-  if(!savedPosters.includes(randomImages.src, randomTitles.innerText, randomQuotes.innerText)) {
-    savedPosters.push(randomImages.src, randomTitles.innerText, randomQuotes.innerText)
+// ! bang operator
+  if(!savedPosters.includes(currentPoster)) {
+    savedPosters.push(currentPoster)
     // return savedPosters;
   }
   console.log(savedPosters);
