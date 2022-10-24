@@ -1,4 +1,5 @@
 // query selector variables go here 👇
+"use strict";
 // Declaring variables
 
 // Img/Title/Quote showcase
@@ -10,6 +11,7 @@ var randomQuotes = document.querySelector('.poster-quote');
 var mainPoster = document.querySelector('.main-poster');
 var makeOwnForm = document.querySelector('.poster-form');
 var savedPosterSection = document.querySelector('.saved-posters');
+var miniPoster = document.querySelector('.mini-poster');
 
 // Our Buttons
 var randomPosterBtn = document.querySelector('.show-random');
@@ -152,6 +154,14 @@ takeMeBackBtn.addEventListener('click', toMain1);
 backToMainBtn.addEventListener('click', toMain2);
 createMyPosterBtn.addEventListener('click', createPoster);
 savePosterBtn.addEventListener('click', savePoster);
+savedPosterGrid.addEventListener('click', removeSavedPoster)
+
+
+
+function removeSavedPoster() {
+  console.log('This is removed!!')
+  savedPosterGrid.style.display = 'none';
+}
 
 
 // functions and event handlers go here 👇
@@ -243,6 +253,8 @@ function savePoster() {
 // ! bang operator
   if(!savedPosters.includes(currentPoster)) {
     savedPosters.push(currentPoster)
+    // console.log(savedPosters);
+    // console.log(currentPoster);
     // return savedPosters;
   }
   console.log(savedPosters);
